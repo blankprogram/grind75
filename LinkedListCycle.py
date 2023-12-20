@@ -7,15 +7,12 @@ class Solution(object):
         if head is None:
             return False
 
-        slow = head  # Slow pointer moves one step at a time
-        fast = head  # Fast pointer moves two steps at a time
-
+        slow = head
+        fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-
             if slow == fast:
-                # Cycle detected
                 return True
 
         return False
